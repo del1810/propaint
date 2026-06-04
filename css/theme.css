@@ -1,0 +1,35 @@
+/* ================================================================
+   PROPAINT 2027 — Theme Configuration
+   ================================================================
+   To re-brand this site, update the two hex values below.
+   Every color, button, border, and highlight will update automatically.
+
+   --theme-primary  : main accent  (topbar bg, badges, highlights, CTAs)
+   --theme-secondary: dark base    (navbar, footer, headings, dark sections)
+   ================================================================ */
+
+:root {
+    --theme-primary: #F5A623;
+    --theme-secondary: #1A2E5A;
+
+    /* ---- Derived shades (auto-computed from primaries) ---- */
+    --theme-primary-dark: #d4881a;
+    --theme-primary-light: #fff3d6;
+    --theme-secondary-dark: #111e3a;
+    --theme-secondary-light: #2c4a82;
+
+    /* ---- Bootstrap 5 overrides (keeps utility classes in sync) ---- */
+    --bs-primary: var(--theme-primary);
+    --bs-primary-rgb: 245, 166, 35;
+    --bs-secondary: var(--theme-secondary);
+    --bs-secondary-rgb: 26, 46, 90;
+    --bs-link-color: var(--theme-primary);
+    --bs-link-hover-color: var(--theme-primary-dark);
+
+    /* ---- Typography ---- */
+    --font-heading: 'Roboto Condensed', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* ---- Spacing ---- */
+    --section-py: 80px;
+}
