@@ -82,7 +82,7 @@
 
         <!-- Brand -->
         <div class="col-lg-4 col-md-6">
-          <img src="/images/logo.png" alt="PROPAINT 2027" class="footer-logo">
+          <img src="images/logo.png" alt="PROPAINT 2027" class="footer-logo">
           <p>South India's largest dedicated business platform for the paints, coatings and surface finishing industry — connecting manufacturers, distributors, architects, contractors and industrial buyers.</p>
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
