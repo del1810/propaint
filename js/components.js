@@ -4,17 +4,17 @@
    ============================================================ */
 
 (function () {
-    /* Detect current page for active nav highlighting */
-    const page = window.location.pathname.split("/").pop() || "index.html";
+  /* Detect current page for active nav highlighting */
+  const page = window.location.pathname.split("/").pop() || "index.html";
 
-    function isActive(href) {
-        if (href === "index.html" && (page === "" || page === "/" || page === "index.html")) return "active";
-        if (href !== "index.html" && page.includes(href.replace(".html", ""))) return "active";
-        return "";
-    }
+  function isActive(href) {
+    if (href === "index.html" && (page === "" || page === "/" || page === "index.html")) return "active";
+    if (href !== "index.html" && page.includes(href.replace(".html", ""))) return "active";
+    return "";
+  }
 
-    /* ---- Header ---- */
-    const headerHTML = `
+  /* ---- Header ---- */
+  const headerHTML = `
   <header id="site-header">
   <!-- Topbar -->
   <div class="topbar d-none d-lg-block">
@@ -48,7 +48,7 @@
   <nav class="navbar navbar-expand-lg site-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <i class="fa fa-paint-roller me-2" style="color:var(--theme-primary)"></i>PROPAINT<span class="brand-year">2027</span>
+        <img src="/images/logo.png" alt="PROPAINT 2027" class="navbar-logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -74,17 +74,15 @@
   </nav>
   </header>`;
 
-    /* ---- Footer ---- */
-    const footerHTML = `
+  /* ---- Footer ---- */
+  const footerHTML = `
   <footer class="site-footer">
     <div class="container">
       <div class="row gy-5">
 
         <!-- Brand -->
         <div class="col-lg-4 col-md-6">
-          <span class="footer-brand">
-            <i class="fa fa-paint-roller me-2"></i>PRO<span>PAINT</span> 2027
-          </span>
+          <img src="/images/logo.png" alt="PROPAINT 2027" class="footer-logo">
           <p>South India's largest dedicated business platform for the paints, coatings and surface finishing industry — connecting manufacturers, distributors, architects, contractors and industrial buyers.</p>
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -153,55 +151,55 @@
     </div>
   </footer>`;
 
-    /* ---- Inject ---- */
-    document.addEventListener("DOMContentLoaded", function () {
-        const hp = document.getElementById("header-placeholder");
-        if (hp) hp.innerHTML = headerHTML;
+  /* ---- Inject ---- */
+  document.addEventListener("DOMContentLoaded", function () {
+    const hp = document.getElementById("header-placeholder");
+    if (hp) hp.innerHTML = headerHTML;
 
-        const fp = document.getElementById("footer-placeholder");
-        if (fp) fp.innerHTML = footerHTML;
+    const fp = document.getElementById("footer-placeholder");
+    if (fp) fp.innerHTML = footerHTML;
 
-        /* ---- Fixed header: set body padding-top to header height ---- */
-        function syncBodyPadding() {
-            const hdr = document.getElementById("site-header");
-            if (hdr) {
-                document.body.style.paddingTop = hdr.offsetHeight + "px";
-            }
-        }
-        syncBodyPadding();
-        window.addEventListener("resize", syncBodyPadding);
+    /* ---- Fixed header: set body padding-top to header height ---- */
+    function syncBodyPadding() {
+      const hdr = document.getElementById("site-header");
+      if (hdr) {
+        document.body.style.paddingTop = hdr.offsetHeight + "px";
+      }
+    }
+    syncBodyPadding();
+    window.addEventListener("resize", syncBodyPadding);
 
-        /* ---- Scroll-to-top button ---- */
-        const scrollBtn = document.createElement("button");
-        scrollBtn.id = "scroll-top";
-        scrollBtn.setAttribute("aria-label", "Scroll to top");
-        scrollBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-        document.body.appendChild(scrollBtn);
+    /* ---- Scroll-to-top button ---- */
+    const scrollBtn = document.createElement("button");
+    scrollBtn.id = "scroll-top";
+    scrollBtn.setAttribute("aria-label", "Scroll to top");
+    scrollBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    document.body.appendChild(scrollBtn);
 
-        scrollBtn.addEventListener("click", function () {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        /* ---- Scroll event: sticky header collapse + show scroll-to-top ---- */
-        window.addEventListener("scroll", function () {
-            const siteHeader = document.getElementById("site-header");
-            const scrollY = window.scrollY || window.pageYOffset;
-
-            if (siteHeader) {
-                if (scrollY > 60) {
-                    siteHeader.classList.add("scrolled");
-                } else {
-                    siteHeader.classList.remove("scrolled");
-                }
-                /* keep body padding in sync as topbar collapses */
-                document.body.style.paddingTop = siteHeader.offsetHeight + "px";
-            }
-
-            if (scrollY > 300) {
-                scrollBtn.classList.add("visible");
-            } else {
-                scrollBtn.classList.remove("visible");
-            }
-        }, { passive: true });
+    scrollBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    /* ---- Scroll event: sticky header collapse + show scroll-to-top ---- */
+    window.addEventListener("scroll", function () {
+      const siteHeader = document.getElementById("site-header");
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      if (siteHeader) {
+        if (scrollY > 60) {
+          siteHeader.classList.add("scrolled");
+        } else {
+          siteHeader.classList.remove("scrolled");
+        }
+        /* keep body padding in sync as topbar collapses */
+        document.body.style.paddingTop = siteHeader.offsetHeight + "px";
+      }
+
+      if (scrollY > 300) {
+        scrollBtn.classList.add("visible");
+      } else {
+        scrollBtn.classList.remove("visible");
+      }
+    }, { passive: true });
+  });
 })();

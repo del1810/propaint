@@ -18,7 +18,7 @@ const SITE = {
 
 /* ---- Image URLs — replace any URL to swap an image ---- */
 const IMAGES = {
-    heroBg: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80",
+    heroBg: "images/indus coating 2.jpg",
     aboutExpo: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80",
     aboutOrg: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80",
     statsBg: "https://images.unsplash.com/photo-1565793579543-2461da8ece42?w=1920&q=80",
@@ -71,6 +71,16 @@ const EXHIBITOR_PROFILES = [
         icon: "fa-tools",
         title: "Adhesives, Sealants & Allied Products",
         items: ["Industrial adhesives", "Construction chemicals", "Sealants & waterproofing compounds", "Surface protection materials"],
+    },
+    {
+        icon: "fa-wrench",
+        title: "Mechanical Tools",
+        items: ["Paint Sprayers", "Electric Sanders", "Power Mixers", "Heat Guns", "Air Compressors", "Paint Mixers", "Pressure Washers", "Paint Removal Tools"],
+    },
+    {
+        icon: "fa-laptop-code",
+        title: "Digital & Smart Solutions",
+        items: ["ERP & Business Management Software", "CRM & Sales Automation Platforms", "Dealer & Distributor Management Solutions", "E-Commerce & Digital Commerce Platforms", "AI & Data Analytics Solutions", "AR/VR Paint Visualization Technologies", "Smart Color Matching Systems", "Digital Marketing & Customer Engagement", "Logistics & Supply Chain Technologies", "BIM & Architectural Software Solutions", "Smart Retail Technologies"],
     },
 ];
 

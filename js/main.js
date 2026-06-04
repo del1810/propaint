@@ -5,79 +5,79 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ---- AOS (Animate On Scroll) ---- */
-    if (typeof AOS !== "undefined") {
-        AOS.init({ duration: 700, once: true, offset: 60 });
+  /* ---- AOS (Animate On Scroll) ---- */
+  if (typeof AOS !== "undefined") {
+    AOS.init({ duration: 700, once: true, offset: 60 });
+  }
+
+  /* ---- Countdown Timer ---- */
+  function updateCountdown() {
+    const target = new Date(SITE.eventDate).getTime();
+    const now = Date.now();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.querySelectorAll(".countdown-box").forEach(b => b.querySelector(".num").textContent = "0");
+      return;
     }
 
-    /* ---- Countdown Timer ---- */
-    function updateCountdown() {
-        const target = new Date(SITE.eventDate).getTime();
-        const now = Date.now();
-        const diff = target - now;
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
 
-        if (diff <= 0) {
-            document.querySelectorAll(".countdown-box").forEach(b => b.querySelector(".num").textContent = "0");
-            return;
+    const d = document.getElementById("cd-days");
+    const h = document.getElementById("cd-hours");
+    const m = document.getElementById("cd-mins");
+    const s = document.getElementById("cd-secs");
+
+    if (d) d.textContent = String(days).padStart(3, "0");
+    if (h) h.textContent = String(hours).padStart(2, "0");
+    if (m) m.textContent = String(mins).padStart(2, "0");
+    if (s) s.textContent = String(secs).padStart(2, "0");
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  /* ---- Number Counter Animation ---- */
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.target) || 0;
+    const duration = 1800;
+    const step = 16;
+    const steps = Math.ceil(duration / step);
+    let current = 0;
+    const increment = target / steps;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = target % 1 === 0 ? Math.round(current) : current.toFixed(1);
+    }, step);
+  }
+
+  const counterEls = document.querySelectorAll(".counter-num");
+  if (counterEls.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.4 });
 
-        const days = Math.floor(diff / 86400000);
-        const hours = Math.floor((diff % 86400000) / 3600000);
-        const mins = Math.floor((diff % 3600000) / 60000);
-        const secs = Math.floor((diff % 60000) / 1000);
+    counterEls.forEach(el => observer.observe(el));
+  }
 
-        const d = document.getElementById("cd-days");
-        const h = document.getElementById("cd-hours");
-        const m = document.getElementById("cd-mins");
-        const s = document.getElementById("cd-secs");
+  /* ---- Dynamic Content Rendering ---- */
 
-        if (d) d.textContent = String(days).padStart(3, "0");
-        if (h) h.textContent = String(hours).padStart(2, "0");
-        if (m) m.textContent = String(mins).padStart(2, "0");
-        if (s) s.textContent = String(secs).padStart(2, "0");
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    /* ---- Number Counter Animation ---- */
-    function animateCounter(el) {
-        const target = parseFloat(el.dataset.target) || 0;
-        const duration = 1800;
-        const step = 16;
-        const steps = Math.ceil(duration / step);
-        let current = 0;
-        const increment = target / steps;
-
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            el.textContent = target % 1 === 0 ? Math.round(current) : current.toFixed(1);
-        }, step);
-    }
-
-    const counterEls = document.querySelectorAll(".counter-num");
-    if (counterEls.length) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.4 });
-
-        counterEls.forEach(el => observer.observe(el));
-    }
-
-    /* ---- Dynamic Content Rendering ---- */
-
-    /* Stats strip */
-    const statsContainer = document.getElementById("stats-container");
-    if (statsContainer && typeof STATS !== "undefined") {
-        statsContainer.innerHTML = STATS.map((s, i) => `
+  /* Stats strip */
+  const statsContainer = document.getElementById("stats-container");
+  if (statsContainer && typeof STATS !== "undefined") {
+    statsContainer.innerHTML = STATS.map((s, i) => `
       <div class="col-6 col-md-3 stat-item" data-aos="fade-up" data-aos-delay="${i * 100}">
         <div class="stat-num"><span class="counter-num" data-target="${parseFloat(s.num)}">${s.num.replace(/[^0-9.]/g, "") || 0}</span><span class="stat-suffix">${s.suffix}</span></div>
         <div class="stat-label">${s.label}</div>
@@ -85,24 +85,24 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `).join("");
 
-        /* re-observe newly created counter elements */
-        document.querySelectorAll(".counter-num").forEach(el => {
-            if (!el.dataset.observed) {
-                el.dataset.observed = "1";
-                const obs = new IntersectionObserver((entries) => {
-                    entries.forEach(e => {
-                        if (e.isIntersecting) { animateCounter(e.target); obs.unobserve(e.target); }
-                    });
-                }, { threshold: 0.4 });
-                obs.observe(el);
-            }
-        });
-    }
+    /* re-observe newly created counter elements */
+    document.querySelectorAll(".counter-num").forEach(el => {
+      if (!el.dataset.observed) {
+        el.dataset.observed = "1";
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { animateCounter(e.target); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.4 });
+        obs.observe(el);
+      }
+    });
+  }
 
-    /* Why Exhibit cards */
-    const whyExhibitContainer = document.getElementById("why-exhibit-container");
-    if (whyExhibitContainer && typeof WHY_EXHIBIT !== "undefined") {
-        whyExhibitContainer.innerHTML = WHY_EXHIBIT.map((item, i) => `
+  /* Why Exhibit cards */
+  const whyExhibitContainer = document.getElementById("why-exhibit-container");
+  if (whyExhibitContainer && typeof WHY_EXHIBIT !== "undefined") {
+    whyExhibitContainer.innerHTML = WHY_EXHIBIT.map((item, i) => `
       <div class="col-md-6 col-lg-4 feature-wrap" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
         <div class="feature-card">
           <div class="feature-icon"><i class="fas ${item.icon}"></i></div>
@@ -111,12 +111,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `).join("");
-    }
+  }
 
-    /* Exhibitor profiles */
-    const profilesContainer = document.getElementById("exhibitor-profiles-container");
-    if (profilesContainer && typeof EXHIBITOR_PROFILES !== "undefined") {
-        profilesContainer.innerHTML = EXHIBITOR_PROFILES.map((cat, i) => `
+  /* Exhibitor profiles */
+  const profilesContainer = document.getElementById("exhibitor-profiles-container");
+  if (profilesContainer && typeof EXHIBITOR_PROFILES !== "undefined") {
+    profilesContainer.innerHTML = EXHIBITOR_PROFILES.map((cat, i) => `
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
         <div class="profile-card">
           <div class="card-icon"><i class="fas ${cat.icon}"></i></div>
@@ -125,12 +125,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `).join("");
-    }
+  }
 
-    /* Visitor profiles */
-    const visitorContainer = document.getElementById("visitor-profiles-container");
-    if (visitorContainer && typeof VISITOR_PROFILES !== "undefined") {
-        visitorContainer.innerHTML = VISITOR_PROFILES.map((v, i) => `
+  /* Visitor profiles */
+  const visitorContainer = document.getElementById("visitor-profiles-container");
+  if (visitorContainer && typeof VISITOR_PROFILES !== "undefined") {
+    visitorContainer.innerHTML = VISITOR_PROFILES.map((v, i) => `
       <div class="col-md-6" data-aos="fade-up" data-aos-delay="${(i % 2) * 80}">
         <div class="visitor-badge">
           <i class="fas ${v.icon}"></i>
@@ -138,12 +138,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `).join("");
-    }
+  }
 
-    /* Event highlights */
-    const highlightsContainer = document.getElementById("event-highlights-container");
-    if (highlightsContainer && typeof EVENT_HIGHLIGHTS !== "undefined") {
-        highlightsContainer.innerHTML = EVENT_HIGHLIGHTS.map((h, i) => `
+  /* Event highlights */
+  const highlightsContainer = document.getElementById("event-highlights-container");
+  if (highlightsContainer && typeof EVENT_HIGHLIGHTS !== "undefined") {
+    highlightsContainer.innerHTML = EVENT_HIGHLIGHTS.map((h, i) => `
       <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="${(i % 3) * 80}">
         <div class="highlight-card">
           <i class="fas ${h.icon}"></i>
@@ -151,12 +151,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `).join("");
-    }
+  }
 
-    /* Why visit */
-    const whyVisitContainer = document.getElementById("why-visit-container");
-    if (whyVisitContainer && typeof WHY_VISIT !== "undefined") {
-        whyVisitContainer.innerHTML = WHY_VISIT.map((item, i) => `
+  /* Why visit */
+  const whyVisitContainer = document.getElementById("why-visit-container");
+  if (whyVisitContainer && typeof WHY_VISIT !== "undefined") {
+    whyVisitContainer.innerHTML = WHY_VISIT.map((item, i) => `
       <div class="col-md-6" data-aos="fade-up" data-aos-delay="${(i % 2) * 80}">
         <div class="visitor-badge">
           <i class="fas ${item.icon}"></i>
@@ -164,12 +164,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `).join("");
-    }
+  }
 
-    /* Market insights */
-    const insightsContainer = document.getElementById("market-insights-container");
-    if (insightsContainer && typeof MARKET_INSIGHTS !== "undefined") {
-        insightsContainer.innerHTML = MARKET_INSIGHTS.map((item, i) => `
+  /* Market insights */
+  const insightsContainer = document.getElementById("market-insights-container");
+  if (insightsContainer && typeof MARKET_INSIGHTS !== "undefined") {
+    insightsContainer.innerHTML = MARKET_INSIGHTS.map((item, i) => `
       <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="${i * 100}">
         <div class="insight-card">
           <div class="big-num">${item.num}</div>
@@ -177,12 +177,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `).join("");
-    }
+  }
 
-    /* Industry sectors */
-    const sectorsContainer = document.getElementById("industry-sectors-container");
-    if (sectorsContainer && typeof INDUSTRY_SECTORS !== "undefined") {
-        sectorsContainer.innerHTML = INDUSTRY_SECTORS.map((s, i) => `
+  /* Industry sectors */
+  const sectorsContainer = document.getElementById("industry-sectors-container");
+  if (sectorsContainer && typeof INDUSTRY_SECTORS !== "undefined") {
+    sectorsContainer.innerHTML = INDUSTRY_SECTORS.map((s, i) => `
       <div class="col-md-6" data-aos="fade-up" data-aos-delay="${(i % 2) * 100}">
         <div class="reason-item">
           <div class="reason-icon"><i class="fas ${s.icon}"></i></div>
@@ -193,12 +193,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `).join("");
-    }
+  }
 
-    /* Sponsor packages */
-    const sponsorContainer = document.getElementById("sponsor-packages-container");
-    if (sponsorContainer && typeof SPONSOR_PACKAGES !== "undefined") {
-        sponsorContainer.innerHTML = SPONSOR_PACKAGES.map((pkg, i) => `
+  /* Sponsor packages */
+  const sponsorContainer = document.getElementById("sponsor-packages-container");
+  if (sponsorContainer && typeof SPONSOR_PACKAGES !== "undefined") {
+    sponsorContainer.innerHTML = SPONSOR_PACKAGES.map((pkg, i) => `
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(i % 3) * 80}">
         <div class="sponsor-card ${pkg.featured ? "featured" : ""}">
           <div class="sponsor-card-header">
@@ -220,52 +220,52 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `).join("");
-    }
+  }
 
-    /* ---- Hero background images from data.js ---- */
-    if (typeof IMAGES !== "undefined") {
-        const heroBg = document.querySelector(".hero");
-        if (heroBg && !heroBg.dataset.bgSet) {
-            heroBg.style.backgroundImage = `url('${IMAGES.heroBg}')`;
-            heroBg.dataset.bgSet = "1";
-        }
-        document.querySelectorAll("[data-img-key]").forEach(el => {
-            const key = el.dataset.imgKey;
-            if (IMAGES[key]) el.style.backgroundImage = `url('${IMAGES[key]}')`;
-        });
-        document.querySelectorAll("[data-img-src-key]").forEach(el => {
-            const key = el.dataset.imgSrcKey;
-            if (IMAGES[key]) el.src = IMAGES[key];
-        });
+  /* ---- Hero background images from data.js ---- */
+  if (typeof IMAGES !== "undefined") {
+    const heroBg = document.querySelector(".hero");
+    if (heroBg && !heroBg.dataset.bgSet) {
+      heroBg.style.backgroundImage = `url('${IMAGES.heroBg}')`;
+      heroBg.dataset.bgSet = "1";
     }
+    document.querySelectorAll("[data-img-key]").forEach(el => {
+      const key = el.dataset.imgKey;
+      if (IMAGES[key]) el.style.backgroundImage = `url('${IMAGES[key]}')`;
+    });
+    document.querySelectorAll("[data-img-src-key]").forEach(el => {
+      const key = el.dataset.imgSrcKey;
+      if (IMAGES[key]) el.src = IMAGES[key];
+    });
+  }
 
-    /* ---- Contact form ---- */
-    const contactForm = document.getElementById("enquiry-form");
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const btn = contactForm.querySelector("[type=submit]");
-            btn.textContent = "Sending…";
-            btn.disabled = true;
+  /* ---- Contact form ---- */
+  const contactForm = document.getElementById("enquiry-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const btn = contactForm.querySelector("[type=submit]");
+      btn.textContent = "Sending…";
+      btn.disabled = true;
 
-            setTimeout(() => {
-                btn.textContent = "Send Enquiry";
-                btn.disabled = false;
-                const alert = document.getElementById("form-success");
-                if (alert) { alert.style.display = "block"; setTimeout(() => alert.style.display = "none", 4000); }
-                contactForm.reset();
-            }, 1200);
-        });
-    }
+      setTimeout(() => {
+        btn.textContent = "Send Enquiry";
+        btn.disabled = false;
+        const alert = document.getElementById("form-success");
+        if (alert) { alert.style.display = "block"; setTimeout(() => alert.style.display = "none", 4000); }
+        contactForm.reset();
+      }, 1200);
+    });
+  }
 
-    /* ---- Sticky navbar shrink on scroll ---- */
-    const navbar = document.querySelector(".site-navbar");
-    if (navbar) {
-        window.addEventListener("scroll", () => {
-            navbar.style.boxShadow = window.scrollY > 50
-                ? "0 4px 20px rgba(0,0,0,.35)"
-                : "0 2px 12px rgba(0,0,0,.25)";
-        });
-    }
+  /* ---- Sticky navbar shrink on scroll ---- */
+  const navbar = document.querySelector(".site-navbar");
+  if (navbar) {
+    window.addEventListener("scroll", () => {
+      navbar.style.boxShadow = window.scrollY > 50
+        ? "0 4px 20px rgba(0,0,0,.35)"
+        : "0 2px 12px rgba(0,0,0,.25)";
+    });
+  }
 
 });
