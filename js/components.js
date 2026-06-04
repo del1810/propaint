@@ -48,7 +48,7 @@
   <nav class="navbar navbar-expand-lg site-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <img src="/images/logo.png" alt="PROPAINT 2027" class="navbar-logo">
+        <img src="images/logo.png" alt="PROPAINT 2027" class="navbar-logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
