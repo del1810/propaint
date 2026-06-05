@@ -114,15 +114,33 @@ document.addEventListener("DOMContentLoaded", function () {
   /* Exhibitor profiles */
   const profilesContainer = document.getElementById("exhibitor-profiles-container");
   if (profilesContainer && typeof EXHIBITOR_PROFILES !== "undefined") {
-    profilesContainer.innerHTML = EXHIBITOR_PROFILES.map((cat, i) => `
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
-        <div class="profile-card">
-          <div class="card-icon"><i class="fas ${cat.icon}"></i></div>
-          <h4>${cat.title}</h4>
-          <ul>${cat.items.map(item => `<li>${item}</li>`).join("")}</ul>
+    const themeColors = [
+      "#3b82f6"
+    ];
+
+    profilesContainer.innerHTML = EXHIBITOR_PROFILES.map((cat, i) => {
+      const color = themeColors[i % themeColors.length];
+      return `
+      <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
+        <div class="exhibitor-modern-card" style="--card-theme: ${color};">
+          <div class="exhibitor-modern-header">
+            <div class="exhibitor-modern-icon">
+              <i class="fas ${cat.icon}"></i>
+            </div>
+            <div class="exhibitor-title-wrap">
+              <h4>${cat.title}</h4>
+              <span class="exhibitor-count">${cat.items.length} categories</span>
+            </div>
+          </div>
+          <div class="exhibitor-modern-body">
+            <ul class="exhibitor-modern-list">
+              ${cat.items.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
         </div>
       </div>
-    `).join("");
+      `;
+    }).join("");
   }
 
   /* Visitor profiles */

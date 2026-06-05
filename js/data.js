@@ -48,39 +48,87 @@ const WHY_EXHIBIT = [
 
 const EXHIBITOR_PROFILES = [
     {
-        icon: "fa-paint-brush",
-        title: "Paint Manufacturers – Decorative & Industrial",
-        items: ["Interior wall paints & exterior paints", "Emulsions, distempers & primers", "Texture paints & designer finishes", "Waterproof & wood coatings", "Protective & anti-corrosion coatings", "Powder coatings & marine coatings", "Epoxy & PU systems", "Specialty & nano coatings"],
+        icon: "fa-paint-roller",
+        title: "Decorative Paints",
+        items: [
+            "Interior wall paints", "Exterior paints", "Emulsions & Distempers",
+            "Primers", "Texture paints", "Designer finishes", "Waterproof coatings",
+            "Wood coatings", "Metal paints & Enamels"
+        ],
+    },
+    {
+        icon: "fa-industry",
+        title: "Industrial Coatings",
+        items: [
+            "Protective coatings", "Anti-corrosion & Powder coatings",
+            "Automotive paints", "OEM & Coil coatings", "Marine coatings",
+            "Floor & Pipeline coatings", "Heat resistant coatings",
+            "Fire-retardant coatings", "Epoxy & PU systems"
+        ],
+    },
+    {
+        icon: "fa-vial",
+        title: "Specialty Paints",
+        items: [
+            "Reflective paints", "Food-grade coatings", "Anti-bacterial coatings",
+            "UV-resistant paints", "Thermal insulation coatings", "Smart coatings",
+            "Nano coatings"
+        ],
     },
     {
         icon: "fa-cogs",
         title: "Powder Coating & Surface Finishing",
-        items: ["Powder coating powders", "Surface treatment chemicals", "Pre-treatment & phosphating systems", "Degreasing chemicals", "Electroplating chemicals", "Metal treatment products", "Finishing solutions"],
+        items: [
+            "Powder coating powders", "Surface treatment chemicals", "Pre-treatment systems",
+            "Degreasing chemicals", "Phosphating systems", "Electroplating chemicals",
+            "Finishing solutions", "Metal treatment products"
+        ],
     },
     {
         icon: "fa-box",
         title: "Packaging & Filling Solutions",
-        items: ["Paint cans & metal containers", "Plastic buckets & closures", "Labels & barcode systems", "Filling machines", "Automatic packing lines", "Drum handling systems"],
+        items: [
+            "Paint cans", "Metal containers", "Plastic buckets", "Labels", "Closures",
+            "Filling machines", "Automatic packing lines", "Drum handling systems",
+            "Barcode & coding systems"
+        ],
     },
     {
         icon: "fa-leaf",
-        title: "Eco-Friendly & Sustainable Coatings",
-        items: ["Water-based paints", "Low VOC coatings", "Green chemistry solutions", "Recyclable packaging", "Bio-based additives", "Energy-efficient curing systems", "Waste & effluent treatment"],
+        title: "Eco-Friendly & Sustainable Coating Solutions",
+        items: [
+            "Water-based paints", "Low VOC coatings", "Green chemistry",
+            "Recyclable packaging", "Bio-based additives", "Energy-efficient curing systems",
+            "Waste management solutions", "Effluent treatment systems"
+        ],
     },
     {
         icon: "fa-tools",
         title: "Adhesives, Sealants & Allied Products",
-        items: ["Industrial adhesives", "Construction chemicals", "Sealants & waterproofing compounds", "Surface protection materials"],
+        items: [
+            "Industrial adhesives", "Construction chemicals", "Sealants",
+            "Waterproofing compounds", "Surface protection materials"
+        ],
     },
     {
         icon: "fa-wrench",
         title: "Mechanical Tools",
-        items: ["Paint Sprayers", "Electric Sanders", "Power Mixers", "Heat Guns", "Air Compressors", "Paint Mixers", "Pressure Washers", "Paint Removal Tools"],
+        items: [
+            "Paint Sprayers", "Electric Sanders", "Power Mixers", "Heat Guns",
+            "Air Compressors", "Paint Mixers", "Pressure Washers", "Paint Removal Tools"
+        ],
     },
     {
         icon: "fa-laptop-code",
         title: "Digital & Smart Solutions",
-        items: ["ERP & Business Management Software", "CRM & Sales Automation Platforms", "Dealer & Distributor Management Solutions", "E-Commerce & Digital Commerce Platforms", "AI & Data Analytics Solutions", "AR/VR Paint Visualization Technologies", "Smart Color Matching Systems", "Digital Marketing & Customer Engagement", "Logistics & Supply Chain Technologies", "BIM & Architectural Software Solutions", "Smart Retail Technologies"],
+        items: [
+            "ERP & Business Management Software", "CRM & Sales Automation Platforms",
+            "Dealer & Distributor Management Solutions", "E-Commerce & Digital Commerce Platforms",
+            "AI & Data Analytics Solutions", "AR/VR Paint Visualization Technologies",
+            "Smart Color Matching Systems", "Digital Marketing & Customer Engagement Platforms",
+            "Logistics & Supply Chain Technologies", "BIM & Architectural Software Solutions",
+            "Smart Retail Technologies"
+        ],
     },
 ];
 
@@ -129,15 +177,18 @@ const SPONSOR_PACKAGES = [
         gst: "+ GST (18%)",
         featured: true,
         benefits: [
-            'Exclusive "Title Sponsor" status — "X Presents PROPAINT 2027"',
             "63 Sqm Premium Exhibition Space",
+            'Exclusive "Title Sponsor" status as "X" Presents PROPAINT 2027',
             "Complimentary conference speaking slot",
-            "Main entrance & stage backdrop branding",
-            "Registration area, hall & VIP lounge branding",
+            "Main entrance, Stage backdrop, Registration area, Hall, VIP lounge branding",
             "Directional signage branding",
-            "Premium logo on website, flyers, emailers, social media",
-            "Branding in all media interactions & press releases",
-            "VIP networking & buyer-seller meet access",
+            "Premium logo placement on Website, Flyers, Brochures, Digital campaigns, Invitations, Emailers",
+            "Social media creatives, Press releases",
+            "Exclusive media mentions",
+            "Branding in all official media interactions",
+            "VIP networking access",
+            "Buyer-seller meet participation",
+            "Access to VIP delegates"
         ],
     },
     {
@@ -150,10 +201,13 @@ const SPONSOR_PACKAGES = [
         benefits: [
             "63 Sqm Premium Exhibition Space",
             "Complimentary conference speaking slot",
-            "Main entrance & stage backdrop branding",
-            "Registration area, hall & VIP lounge branding",
-            "Premium logo on all media & press releases",
-            "VIP networking & buyer-seller meet",
+            "Main entrance, Stage backdrop, Registration area, Hall, VIP lounge branding",
+            "Premium logo placement on Website, Flyers, Brochures, Digital campaigns, Invitations, Emailers",
+            "Social media creatives, Press releases",
+            "Branding in all official media interactions",
+            "VIP networking access",
+            "Buyer-seller meet participation",
+            "Access to VIP delegates"
         ],
     },
     {
@@ -166,10 +220,13 @@ const SPONSOR_PACKAGES = [
         benefits: [
             "35 Sqm Premium Exhibition Space",
             "Complimentary conference speaking slot",
-            "Main entrance & stage backdrop branding",
-            "Hall & VIP lounge branding",
-            "Premium logo on all media",
-            "VIP networking & buyer-seller meet",
+            "Main entrance, Stage backdrop, Registration area, Hall, VIP lounge branding",
+            "Premium logo placement on Website, Flyers, Brochures, Digital campaigns, Invitations, Emailers",
+            "Social media creatives, Press releases",
+            "Branding in all official media interactions",
+            "VIP networking access",
+            "Buyer-seller meet participation",
+            "Access to VIP delegates"
         ],
     },
     {
@@ -182,10 +239,12 @@ const SPONSOR_PACKAGES = [
         benefits: [
             "27 Sqm Premium Exhibition Space",
             "Complimentary conference speaking slot",
-            "Main entrance & stage backdrop branding",
-            "VIP lounge branding",
-            "Premium logo on all media",
+            "Main entrance, Stage backdrop, Registration area, VIP lounge branding",
+            "Premium logo placement on Website, Flyers, Brochures, Digital campaigns, Invitations, Emailers",
+            "Social media creatives, Press releases",
             "VIP networking access",
+            "Buyer-seller meet participation",
+            "Access to VIP delegates"
         ],
     },
     {
@@ -195,13 +254,15 @@ const SPONSOR_PACKAGES = [
         gst: "+ GST (18%)",
         featured: true,
         benefits: [
-            'Exclusive "Networking Dinner Presented by [Sponsor]" rights',
             "18 Sqm Premium Exhibition Space",
-            "Premium brand visibility at dinner venue",
-            "10 min speaking slot",
-            "Access to 50+ industry consultants",
-            "Direct high-value networking beyond expo hours",
-            "Exclusive digital promotions to all registered visitors",
+            'Exclusive Title Rights "Networking Dinner Presented by [Sponsor Name]"',
+            "Premium Brand Visibility at Dinner Venue",
+            "Branding On Event Collaterals: Dinner Invite, Website, Emailers, Press Releases, Social Media, Advertisements, And More",
+            "50+ Industry Consultants",
+            "10 Min Speaking Slot",
+            "Direct High-Value Networking",
+            "Relationship Building Beyond Expo Hours",
+            "Exclusive Digital Promotions to All Registered Visitors"
         ],
     },
     {
@@ -211,12 +272,13 @@ const SPONSOR_PACKAGES = [
         gst: "+ GST (18%)",
         featured: true,
         benefits: [
-            "Brand logo on ALL visitor lanyards — maximum visibility",
             "18 Sqm Premium Exhibition Space",
-            "Main entrance & stage backdrop branding",
-            "Registration area branding",
-            "Premium logo on all media & press releases",
-            "Buyer-seller meet participation",
+            "Brand logo on official visitor lanyards",
+            "High visibility across all attendees",
+            "Main entrance, Stage backdrop, Registration area branding",
+            "Premium logo placement on Website, Flyers, Brochures, Digital campaigns, Invitations, Emailers",
+            "Social media creatives, Press releases",
+            "Buyer-seller meet participation"
         ],
     },
     {
@@ -226,12 +288,14 @@ const SPONSOR_PACKAGES = [
         gst: "+ GST (18%)",
         featured: true,
         benefits: [
-            "Branding at all registration counters",
-            "Digital registration page branding",
-            "Branding on registration confirmations",
             "18 Sqm Premium Exhibition Space",
-            "Main entrance & stage backdrop branding",
-            "Buyer-seller meet participation",
+            'Branding at registration counters as "Registration Sponsor"',
+            "Branding on registration confirmations",
+            "Digital registration page branding",
+            "Main entrance, Stage backdrop branding",
+            "Premium logo placement on Website, Flyers, Brochures, Digital campaigns, Invitations, Emailers",
+            "Social media creatives, Press releases",
+            "Buyer-seller meet participation"
         ],
     },
     {
@@ -241,12 +305,15 @@ const SPONSOR_PACKAGES = [
         gst: "+ GST (18%)",
         featured: true,
         benefits: [
-            "Logo on ALL official delegate bags",
+            "18 Sqm Premium Exhibition Space",
+            "Logo on official delegate bags",
             "Distribution to all VIPs & visitors",
             "Promotional inserts allowed",
-            "18 Sqm Premium Exhibition Space",
-            "Main entrance & stage backdrop branding",
-            "Buyer-seller meet participation",
+            "Main entrance branding",
+            "Stage backdrop branding",
+            "Premium logo placement on Website, Flyers, Brochures, Digital campaigns, Invitations, Emailers",
+            "Social media creatives, Press releases",
+            "Buyer-seller meet participation"
         ],
     },
     {
@@ -256,12 +323,16 @@ const SPONSOR_PACKAGES = [
         gst: "+ GST (18%)",
         featured: true,
         benefits: [
-            "Branding inside the conference hall",
-            "Podium, LED screen & brochure branding",
-            "Speaker session opportunity",
             "18 Sqm Premium Exhibition Space",
-            "Main entrance & stage backdrop branding",
-            "Buyer-seller meet participation",
+            "Branding inside conference hall",
+            "Speaker session opportunity",
+            "Podium, LED screen branding",
+            "Conference brochure branding",
+            "Networking with industry delegates",
+            "Main entrance,Stage backdrop branding",
+            "Premium logo placement on Website, Flyers, Brochures, Digital campaigns, Invitations, Emailers",
+            "Social media creatives, Press releases",
+            "Buyer-seller meet participation"
         ],
     },
 ];
