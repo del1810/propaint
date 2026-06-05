@@ -9,25 +9,26 @@
    ================================================================ */
 
 :root {
-    --theme-primary: #e11f26;
+    --theme-primary: #007bff;
+    /* --theme-secondary: #1a1a1a; */
     --theme-secondary: #0d1f3c;
-    --theme-blue: #1fb5e9;
-    --theme-yellow: #fcdc3e;
+    --theme-blue: #007bff;
+    --theme-yellow: #ff9900;
 
     /* ---- Derived shades ---- */
-    --theme-primary-dark: #b71018;
-    --theme-primary-light: #fde8e9;
-    --theme-secondary-dark: #060f1e;
-    --theme-secondary-light: #1a3a6e;
-    --theme-blue-dark: #1290bb;
-    --theme-blue-light: #d0f1fd;
-    --theme-yellow-dark: #e5c400;
+    --theme-primary-dark: #0056b3;
+    --theme-primary-light: #e6f2ff;
+    --theme-secondary-dark: #000000;
+    --theme-secondary-light: #2b2b2b;
+    --theme-blue-dark: #0056b3;
+    --theme-blue-light: #e6f2ff;
+    --theme-yellow-dark: #d98200;
 
     /* ---- Bootstrap 5 overrides ---- */
     --bs-primary: var(--theme-primary);
-    --bs-primary-rgb: 225, 31, 38;
+    --bs-primary-rgb: 0, 123, 255;
     --bs-secondary: var(--theme-secondary);
-    --bs-secondary-rgb: 13, 31, 60;
+    --bs-secondary-rgb: 26, 26, 26;
     --bs-link-color: var(--theme-primary);
     --bs-link-hover-color: var(--theme-primary-dark);
 

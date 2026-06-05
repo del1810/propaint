@@ -146,7 +146,7 @@ const SPONSOR_PACKAGES = [
         slots: 3,
         price: "₹10 Lakhs",
         gst: "+ GST (18%)",
-        featured: false,
+        featured: true,
         benefits: [
             "63 Sqm Premium Exhibition Space",
             "Complimentary conference speaking slot",
@@ -162,7 +162,7 @@ const SPONSOR_PACKAGES = [
         slots: 3,
         price: "₹7 Lakhs",
         gst: "+ GST (18%)",
-        featured: false,
+        featured: true,
         benefits: [
             "35 Sqm Premium Exhibition Space",
             "Complimentary conference speaking slot",
@@ -178,7 +178,7 @@ const SPONSOR_PACKAGES = [
         slots: 3,
         price: "₹5 Lakhs",
         gst: "+ GST (18%)",
-        featured: false,
+        featured: true,
         benefits: [
             "27 Sqm Premium Exhibition Space",
             "Complimentary conference speaking slot",
@@ -193,7 +193,7 @@ const SPONSOR_PACKAGES = [
         exclusive: true,
         price: "₹5 Lakhs",
         gst: "+ GST (18%)",
-        featured: false,
+        featured: true,
         benefits: [
             'Exclusive "Networking Dinner Presented by [Sponsor]" rights',
             "18 Sqm Premium Exhibition Space",
@@ -209,7 +209,7 @@ const SPONSOR_PACKAGES = [
         exclusive: true,
         price: "₹4 Lakhs",
         gst: "+ GST (18%)",
-        featured: false,
+        featured: true,
         benefits: [
             "Brand logo on ALL visitor lanyards — maximum visibility",
             "18 Sqm Premium Exhibition Space",
@@ -224,7 +224,7 @@ const SPONSOR_PACKAGES = [
         exclusive: true,
         price: "₹4 Lakhs",
         gst: "+ GST (18%)",
-        featured: false,
+        featured: true,
         benefits: [
             "Branding at all registration counters",
             "Digital registration page branding",
@@ -239,7 +239,7 @@ const SPONSOR_PACKAGES = [
         exclusive: true,
         price: "₹4 Lakhs",
         gst: "+ GST (18%)",
-        featured: false,
+        featured: true,
         benefits: [
             "Logo on ALL official delegate bags",
             "Distribution to all VIPs & visitors",
@@ -254,7 +254,7 @@ const SPONSOR_PACKAGES = [
         exclusive: true,
         price: "₹4 Lakhs",
         gst: "+ GST (18%)",
-        featured: false,
+        featured: true,
         benefits: [
             "Branding inside the conference hall",
             "Podium, LED screen & brochure branding",

@@ -103,12 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const whyExhibitContainer = document.getElementById("why-exhibit-container");
   if (whyExhibitContainer && typeof WHY_EXHIBIT !== "undefined") {
     whyExhibitContainer.innerHTML = WHY_EXHIBIT.map((item, i) => `
-      <div class="col-md-6 col-lg-4 feature-wrap" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas ${item.icon}"></i></div>
-          <h4>${item.title}</h4>
-          <p>${item.desc}</p>
-        </div>
+      <div class="col-md-6 col-lg-4 why-exhibit-col" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
+        <div class="why-exhibit-icon"><i class="fas ${item.icon}"></i></div>
+        <h4>${item.title}</h4>
+        <p>${item.desc}</p>
       </div>
     `).join("");
   }
@@ -203,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="sponsor-card ${pkg.featured ? "featured" : ""}">
           <div class="sponsor-card-header">
             <span class="sponsor-tier-badge">${pkg.exclusive ? "Exclusive" : pkg.slots + " Available"}</span>
-            ${pkg.featured ? '<div class="mb-1" style="color:rgba(255,255,255,.8);font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;">⭐ Most Prominent</div>' : ""}
             <h3>${pkg.tier}</h3>
             <div class="price">${pkg.price} <small>${pkg.gst}</small></div>
           </div>
@@ -222,22 +219,22 @@ document.addEventListener("DOMContentLoaded", function () {
     `).join("");
   }
 
-  /* ---- Hero background images from data.js ---- */
-  if (typeof IMAGES !== "undefined") {
-    const heroBg = document.querySelector(".hero");
-    if (heroBg && !heroBg.dataset.bgSet) {
-      heroBg.style.backgroundImage = `url('${IMAGES.heroBg}')`;
-      heroBg.dataset.bgSet = "1";
-    }
-    document.querySelectorAll("[data-img-key]").forEach(el => {
-      const key = el.dataset.imgKey;
-      if (IMAGES[key]) el.style.backgroundImage = `url('${IMAGES[key]}')`;
-    });
-    document.querySelectorAll("[data-img-src-key]").forEach(el => {
-      const key = el.dataset.imgSrcKey;
-      if (IMAGES[key]) el.src = IMAGES[key];
-    });
-  }
+  // /* ---- Hero background images from data.js ---- */
+  // if (typeof IMAGES !== "undefined") {
+  //   const heroBg = document.querySelector(".hero");
+  //   if (heroBg && !heroBg.dataset.bgSet) {
+  //     heroBg.style.backgroundImage = `url('${IMAGES.heroBg}')`;
+  //     heroBg.dataset.bgSet = "1";
+  //   }
+  //   document.querySelectorAll("[data-img-key]").forEach(el => {
+  //     const key = el.dataset.imgKey;
+  //     if (IMAGES[key]) el.style.backgroundImage = `url('${IMAGES[key]}')`;
+  //   });
+  //   document.querySelectorAll("[data-img-src-key]").forEach(el => {
+  //     const key = el.dataset.imgSrcKey;
+  //     if (IMAGES[key]) el.src = IMAGES[key];
+  //   });
+  // }
 
   /* ---- Contact form ---- */
   const contactForm = document.getElementById("enquiry-form");

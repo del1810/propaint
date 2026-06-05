@@ -29,7 +29,7 @@
             <i class="fas fa-envelope"></i> sales@propaint.in
           </a>
           <div class="separator"></div>
-          <span class="d-flex align-items-center gap-2" style="font-size:.875rem;color:#1a1a1a;font-weight:600;">
+          <span class="d-flex align-items-center gap-2" style="font-size:.875rem;color:#ffffff;font-weight:600;">
             <i class="fas fa-map-marker-alt"></i> Chennai Trade Centre, Chennai
           </span>
         </div>
@@ -138,7 +138,7 @@
           </div>
           <div class="footer-contact-item">
             <i class="fas fa-calendar-alt"></i>
-            <span><strong style="color:var(--theme-primary)">May 14–16, 2027</strong> &nbsp;|&nbsp; Chennai Trade Centre</span>
+            <span><strong style="color:var(--theme-yellow)">May 14–16, 2027</strong> &nbsp;|&nbsp; Chennai Trade Centre</span>
           </div>
         </div>
 
