@@ -232,7 +232,6 @@ img {
     padding: 0 0;
     position: sticky;
     top: 0;
-    height: 110px;
     z-index: 1000;
     box-shadow: 0 2px 18px rgba(0, 0, 0, .13);
     border-bottom: 3px solid transparent;
@@ -1363,6 +1362,15 @@ section {
    Responsive
    ============================================================ */
 @media (max-width: 991px) {
+    .site-navbar .navbar-collapse {
+        background-color: #ffffff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 15px 20px;
+        margin-top: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
     .site-navbar .nav-link {
         padding: 12px 0 !important;
     }
@@ -2107,6 +2115,12 @@ section {
     border-right: none;
 }
 
+.stat-glass-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .stat-glass-icon {
     width: 52px;
     height: 52px;
@@ -2160,13 +2174,41 @@ section {
     .stat-glass-item {
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 16px 0;
     }
 
     .stat-glass-item:last-child {
         border-bottom: none;
     }
 
+    .stat-glass-wrap {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
     .stats-glass-card {
         margin-top: 20px !important;
+    }
+}
+
+/* Organiser Badge Overlap */
+.organiser-badge-overlap {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border-left: 5px solid var(--theme-primary);
+    min-width: 170px;
+    z-index: 10;
+}
+
+@media (max-width: 575px) {
+    .organiser-badge-overlap {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin: 15px auto 0;
+        max-width: 240px;
+        border-left: none;
+        border-top: 4px solid var(--theme-primary);
     }
 }

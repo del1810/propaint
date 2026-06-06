@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="row g-0 align-items-center">
           ${STATS.map((s, i) => `
             <div class="col-md-3 col-sm-6 stat-glass-item ${i === STATS.length - 1 ? 'border-0' : ''}">
-              <div class="d-flex align-items-center gap-3 py-2 px-3 justify-content-center justify-content-md-start">
+              <div class="stat-glass-wrap py-2 px-3">
                 <div class="stat-glass-icon">
                   <i class="fas ${s.icon || 'fa-chart-line'}"></i>
                 </div>
