@@ -228,12 +228,26 @@ document.addEventListener("DOMContentLoaded", function () {
   /* Sponsor packages */
   const sponsorContainer = document.getElementById("sponsor-packages-container");
   if (sponsorContainer && typeof SPONSOR_PACKAGES !== "undefined") {
+    const getTierIcon = (tier) => {
+      const t = tier.toLowerCase();
+      if (t.includes("title")) return "fa-crown";
+      if (t.includes("platinum")) return "fa-gem";
+      if (t.includes("gold")) return "fa-trophy";
+      if (t.includes("silver")) return "fa-medal";
+      if (t.includes("dinner") || t.includes("networking")) return "fa-glass-cheers";
+      if (t.includes("lanyard")) return "fa-id-badge";
+      if (t.includes("registration")) return "fa-user-check";
+      if (t.includes("bag")) return "fa-bag-shopping";
+      if (t.includes("conference")) return "fa-microphone";
+      return "fa-award";
+    };
+
     sponsorContainer.innerHTML = SPONSOR_PACKAGES.map((pkg, i) => `
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(i % 3) * 80}">
         <div class="sponsor-card ${pkg.featured ? "featured" : ""}">
           <div class="sponsor-card-header">
             <span class="sponsor-tier-badge">${pkg.exclusive ? "Exclusive" : pkg.slots + " Available"}</span>
-            <h3>${pkg.tier}</h3>
+            <h3><i class="fas ${getTierIcon(pkg.tier)} me-2"></i>${pkg.tier}</h3>
             <div class="price">${pkg.price} <small>${pkg.gst}</small></div>
           </div>
           <div class="sponsor-card-body">

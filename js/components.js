@@ -122,7 +122,7 @@
           <h5 class="footer-heading">Contact Us</h5>
           <div class="footer-contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>Chennai Trade Centre, Nandambakkam, Chennai – 600 089, Tamil Nadu, India</span>
+            <span>FAIR CONNECTS INDIA LLP <br> 12C/1, 3rd Cross Street, South Phase Industrial Estate, Guindy, Chennai – 600032,<br> Tamil Nadu, India</span>
           </div>
           <div class="footer-contact-item">
             <i class="fas fa-phone-alt"></i>
@@ -146,7 +146,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p class="mb-0">&copy; 2025 PROPAINT 2027. Organised by <a href="#">Fair Connects India (FCI)</a>. All rights reserved.</p>
+        <p class="mb-0">&copy; 2025 PROPAINT 2027. Organised by <a href="https://fairconnects.in" target="_blank">FAIR CONNECTS INDIA (FCI)</a>. All rights reserved.</p>
       </div>
     </div>
   </footer>`;

@@ -12,7 +12,7 @@ const SITE = {
     phone: "+91 95005 32234",
     email: "sales@propaint.in",
     website: "www.propaint.in",
-    organiser: "Fair Connects India (FCI)",
+    organiser: "FAIR CONNECTS INDIA (FCI)",
     eventDate: "2027-05-14T09:00:00+05:30",
 };
 
@@ -34,7 +34,7 @@ const STATS = [
     { num: "150", suffix: "+", label: "Exhibitors", icon: "fa-store" },
     { num: "10", suffix: "+", label: "Countries", icon: "fa-globe" },
     { num: "3", suffix: "", label: "Days of Business", icon: "fa-calendar-alt" },
-    { num: "50", suffix: "K+", label: "Expected Visitors", icon: "fa-users" },
+    { num: "20", suffix: "K+", label: "Expected Visitors", icon: "fa-users" },
 ];
 
 const WHY_EXHIBIT = [
