@@ -9,33 +9,36 @@
    ================================================================ */
 
 :root {
-    --theme-primary: #007bff;
-    /* --theme-secondary: #1a1a1a; */
-    --theme-secondary: #0d1f3c;
-    --theme-blue: #007bff;
-    --theme-yellow: #ff9900;
+  --theme-primary: #1FBCB0;
+  /* --theme-secondary: #1a1a1a; */
+  --theme-secondary: #0d1f3c;
+  --theme-blue: #007bff;
+  --theme-yellow: #ff9900;
 
-    /* ---- Derived shades ---- */
-    --theme-primary-dark: #0056b3;
-    --theme-primary-light: #e6f2ff;
-    --theme-secondary-dark: #000000;
-    --theme-secondary-light: #2b2b2b;
-    --theme-blue-dark: #0056b3;
-    --theme-blue-light: #e6f2ff;
-    --theme-yellow-dark: #d98200;
+  /* ---- Derived shades ---- */
+  --theme-primary-dark: #0056b3;
+  --theme-primary-light: #e6f2ff;
+  --theme-secondary-dark: #000000;
+  --theme-secondary-light: #2b2b2b;
+  --theme-blue-dark: #0056b3;
+  --theme-blue-light: #e6f2ff;
+  --theme-yellow-dark: #d98200;
 
-    /* ---- Bootstrap 5 overrides ---- */
-    --bs-primary: var(--theme-primary);
-    --bs-primary-rgb: 0, 123, 255;
-    --bs-secondary: var(--theme-secondary);
-    --bs-secondary-rgb: 26, 26, 26;
-    --bs-link-color: var(--theme-primary);
-    --bs-link-hover-color: var(--theme-primary-dark);
+  /* ---- Bootstrap 5 overrides ---- */
+  --bs-primary: var(--theme-primary);
+  --bs-primary-rgb: 0, 123, 255;
+  --bs-secondary: var(--theme-secondary);
+  --bs-secondary-rgb: 26, 26, 26;
+  --bs-link-color: var(--theme-primary);
+  --bs-link-hover-color: var(--theme-primary-dark);
 
-    /* ---- Typography ---- */
-    --font-heading: 'Roboto Condensed', sans-serif;
-    --font-body: 'Roboto', sans-serif;
+  /* ---- Typography ---- */
+  --font-heading: 'Roboto Condensed', sans-serif;
+  --font-body: 'Roboto', sans-serif;
 
-    /* ---- Spacing ---- */
-    --section-py: 80px;
+  /* ---- Spacing ---- */
+  --section-py: 80px;
+
+  /* ---- Accent gradient (teal → green) ---- */
+  --gradient-accent: linear-gradient(134deg, rgba(49, 196, 243, 1) 0%, rgba(31, 188, 176, 1) 19%, rgba(108, 192, 100, 1) 100%);
 }

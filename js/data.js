@@ -31,10 +31,10 @@ const IMAGES = {
 };
 
 const STATS = [
-    { num: "150", suffix: "+", label: "Exhibitors" },
-    { num: "10", suffix: "+", label: "Countries" },
-    { num: "3", suffix: "", label: "Days of Business" },
-    { num: "50", suffix: "K+", label: "Expected Visitors" },
+    { num: "150", suffix: "+", label: "Exhibitors", icon: "fa-store" },
+    { num: "10", suffix: "+", label: "Countries", icon: "fa-globe" },
+    { num: "3", suffix: "", label: "Days of Business", icon: "fa-calendar-alt" },
+    { num: "50", suffix: "K+", label: "Expected Visitors", icon: "fa-users" },
 ];
 
 const WHY_EXHIBIT = [
@@ -336,14 +336,6 @@ const SPONSOR_PACKAGES = [
         ],
     },
 ];
-
-const MARKET_INSIGHTS = [
-    { num: "₹1.35T", label: "India Paint Market (Current)" },
-    { num: "₹2.29T", label: "Projected Market Size by 2030" },
-    { num: "9.2%", label: "Industry CAGR" },
-    { num: "$17B+", label: "Projected USD Market (Next Decade)" },
-];
-
 const INDUSTRY_SECTORS = [
     { icon: "fa-building", title: "Construction & Infrastructure", desc: "Residential, commercial real estate, metro projects and public infrastructure driving demand for decorative paints, waterproofing and protective coatings." },
     { icon: "fa-car", title: "Automotive Leadership", desc: "One of India's largest automotive production centres with OEM coatings, refinish paints, powder coatings and EV component coatings." },

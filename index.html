@@ -34,8 +34,7 @@
     <!-- ============================================================
      HERO
      ============================================================ -->
-    <section class="hero"
-        style="background-image:url('images/indus coating 2.jpg')">
+    <section class="hero" style="background-image:url('images/hero.png')">
         <div class="hero-overlay"></div>
         <div class="container hero-content py-5">
             <div class="row">
@@ -88,45 +87,36 @@
     <!-- ============================================================
      STATS STRIP
      ============================================================ -->
-    <section class="stats-strip py-0"
+    <section class="stats-strip py-5"
         style="background-image:url('https://images.unsplash.com/photo-1565793579543-2461da8ece42?w=1920&q=80')">
-        <div class="container position-relative py-5">
-            <div class="row gy-4 position-relative" id="stats-container">
-                <!-- injected by main.js -->
-                <div class="col-6 col-md-3 stat-item">
-                    <div class="stat-num"><span>150</span><span class="stat-suffix">+</span></div>
-                    <div class="stat-label">Exhibitors</div>
-                </div>
-                <div class="col-6 col-md-3 stat-item">
-                    <div class="stat-num"><span>10</span><span class="stat-suffix">+</span></div>
-                    <div class="stat-label">Countries</div>
-                </div>
-                <div class="col-6 col-md-3 stat-item">
-                    <div class="stat-num"><span>3</span><span class="stat-suffix"></span></div>
-                    <div class="stat-label">Days of Business</div>
-                </div>
-                <div class="col-6 col-md-3 stat-item">
-                    <div class="stat-num"><span>50</span><span class="stat-suffix">K+</span></div>
-                    <div class="stat-label">Expected Visitors</div>
-                </div>
+        <div class="container position-relative">
+            <div id="stats-container">
+                <!-- Dynamically rendered by main.js using STATS in data.js -->
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-     ABOUT PROPAINT (split section 1)
+     ABOUT PROPAINT (Modern layout)
      ============================================================ -->
-    <section class="p-0">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-6 about-img-wrap" data-aos="fade-right">
-                    <img src="images/wood_coating 2.jpg" alt="PROPAINT Expo" loading="lazy">
+    <section class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-image-grid">
+                        <div class="about-image-grid-left">
+                            <img src="images/wood_coating 2.jpg" alt="Wood Coating" loading="lazy">
+                            <img src="images/paint containers 2.jpg" alt="Paint Containers" loading="lazy">
+                        </div>
+                        <div class="about-image-grid-right">
+                            <img src="images/waterproofing 3.jpg" alt="Interior Painting" loading="lazy">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="about-content-box">
-                        <p class="section-subtitle">About the Expo</p>
-                        <h2>About PROPAINT</h2>
-                        <div class="section-divider left mt-2 mb-4"></div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-text-container">
+                        <span class="section-subtitle">About the Expo</span>
+                        <h2>About PROPAINT 2027</h2>
                         <p>PROPAINT is a dedicated trade exhibition exclusively focused on Finished Paint Products,
                             Decorative Paint Products, Premium Consumer Paint Solutions, Designer Wall Finishes, Surface
                             Aesthetic Technologies and Waterproofing &amp; Protective Paint Systems.</p>
@@ -134,8 +124,11 @@
                             industry, PROPAINT connects leading brands, manufacturers, distributors, dealers,
                             architects, contractors, interior designers, builders, industrial buyers and consumers under
                             one dynamic marketplace.</p>
-                        <a href="about.html" class="btn btn-secondary rounded-pill-btn mt-2">Learn More <i
-                                class="fas fa-arrow-right ms-2"></i></a>
+                        <div>
+                            <a href="about.html" class="btn btn-primary rounded-pill-btn mt-3 px-4">
+                                Learn More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -143,29 +136,39 @@
     </section>
 
     <!-- ============================================================
-     VISION & MISSION (split section 2)
+     VISION & MISSION (Modern layout reversed)
      ============================================================ -->
-    <section class="p-0">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-6 order-lg-2 about-img-wrap" data-aos="fade-left">
-                    <img src="images/interior 2.jpg" alt="Paint Colors" loading="lazy">
+    <section class="py-5 section-bg">
+        <div class="container py-4">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+                    <div class="about-image-grid">
+                        <div class="about-image-grid-left">
+                            <img src="images/indus coating 3.jpg" alt="Industrial Coating" loading="lazy">
+                            <img src="images/waterproofing 1.jpg" alt="Waterproofing" loading="lazy">
+                        </div>
+                        <div class="about-image-grid-right">
+                            <img src="images/auto powder2.jpg" alt="Automotive Coating" loading="lazy">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="about-content-box dark">
-                        <p class="section-subtitle" style="color:var(--theme-primary)">Our Purpose</p>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <div class="about-text-container">
+                        <span class="section-subtitle">Our Purpose</span>
                         <h2>Vision &amp; Mission</h2>
-                        <div class="section-divider left mt-2 mb-4"></div>
-                        <p><strong style="color:var(--theme-primary)">Vision:</strong> To establish PROPAINT as India's
+                        <p><strong>Vision:</strong> To establish PROPAINT as India's
                             leading and most influential paints and coating products exhibition — the region's premier
                             destination for business growth, technology advancement and future-ready industry
                             partnerships.</p>
-                        <p><strong style="color:var(--theme-primary)">Mission:</strong> To create India's most focused
+                        <p><strong>Mission:</strong> To create India's most focused
                             and future-ready business platform for the paint products, coatings and surface finishing
                             industry — connecting manufacturers, suppliers, distributors and institutional buyers to
                             accelerate trade, innovation and industrial growth.</p>
-                        <a href="contact.html" class="btn btn-primary rounded-pill-btn mt-2">Contact Us <i
-                                class="fas fa-arrow-right ms-2"></i></a>
+                        <div>
+                            <a href="contact.html" class="btn btn-primary rounded-pill-btn mt-3 px-4">
+                                Contact Us <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -249,31 +252,17 @@
                     <p class="text-muted">Strategic, data-driven approach with world-class execution standards —
                         connecting manufacturers, suppliers, buyers, policymakers and innovators under one roof.</p>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="row gy-3">
-                        <div class="col-6">
-                            <div class="insight-card h-100">
-                                <div class="big-num">20+</div>
-                                <p>Years of Exhibition Expertise</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="insight-card h-100">
-                                <div class="big-num">₹1.35T</div>
-                                <p>India Paint &amp; Coatings Market</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="insight-card h-100">
-                                <div class="big-num">9.2%</div>
-                                <p>Industry CAGR</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="insight-card h-100">
-                                <div class="big-num">₹2.29T</div>
-                                <p>Projected Market by 2030</p>
-                            </div>
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <div class="position-relative d-inline-block w-100">
+                        <img src="images/expo.jpg" alt="Fair Connects India B2B Exhibition Organizer"
+                            class="img-fluid rounded-4 shadow-lg w-100" style="max-height: 400px; object-fit: cover;">
+                        <div class="position-absolute bg-white p-3 rounded-3 shadow text-center"
+                            style="bottom: 20px; left: 20px; border-left: 5px solid var(--theme-primary); min-width: 170px; z-index: 10;">
+                            <h3 class="fw-bold mb-0 text-primary"
+                                style="font-family: var(--font-heading); font-size: 2.2rem; line-height: 1;">20+</h3>
+                            <p class="mb-0 text-muted small fw-bold text-uppercase"
+                                style="font-size: 0.72rem; letter-spacing: 0.5px; margin-top: 4px;">Years of Exhibition
+                                Expertise</p>
                         </div>
                     </div>
                 </div>
@@ -282,9 +271,51 @@
     </section>
 
     <!-- ============================================================
+     BENTO GALLERY
+     ============================================================ -->
+    <section class="bento-gallery-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Products in Focus</p>
+                <h2 class="section-title">A Glimpse Into the World of Paints &amp; Coatings</h2>
+                <div class="section-divider mx-auto"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="bento-gallery" data-aos="fade-up" data-aos-delay="100">
+                <!-- Cell 1: tall left (spans 2 rows) -->
+                <div class="bento-item bento-tall">
+                    <img src="images/indus coating 1.jpg" alt="Industrial Coatings" loading="lazy">
+                    <div class="bento-label"><span>Industrial Coatings</span></div>
+                </div>
+                <!-- Cell 2: wide top-center (spans 2 cols) -->
+                <div class="bento-item bento-wide">
+                    <img src="images/metal coating 1.jpg" alt="Metal Coatings" loading="lazy">
+                    <div class="bento-label"><span>Metal Coatings</span></div>
+                </div>
+                <!-- Cell 3: top-right -->
+                <div class="bento-item">
+                    <img src="images/auto powder.jpg" alt="Auto Powder Coatings" loading="lazy">
+                    <div class="bento-label"><span>Auto Powder</span></div>
+                </div>
+                <!-- Cell 4: bottom-center -->
+                <div class="bento-item">
+                    <img src="images/interior 2.jpg" alt="Interior Paints" loading="lazy">
+                    <div class="bento-label"><span>Interior Paints</span></div>
+                </div>
+                <!-- Cell 5: bottom-right -->
+                <div class="bento-item">
+                    <img src="images/waterproofing 2.jpg" alt="Waterproofing" loading="lazy">
+                    <div class="bento-label"><span>Waterproofing</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
      FINAL CTA
      ============================================================ -->
-    <section class="bg-gradient-primary text-white text-center py-5">
+    <section class="cta-banner text-center py-5" style="background-image:url('images/reflective paint 2.jpg')">
         <div class="container py-3" data-aos="zoom-in">
             <h2 class="text-white fw-bold mb-3" style="font-family:var(--font-heading);font-size:2.2rem">
                 Be Part of India's Most Focused Paints &amp; Coatings Event
@@ -293,7 +324,7 @@
                 May 14–16, 2027 &nbsp;|&nbsp; Chennai Trade Centre, Chennai, India
             </p>
             <div class="d-flex justify-content-center flex-wrap gap-3">
-                <a href="exhibitors.html" class="btn btn-secondary btn-lg rounded-pill-btn px-4">Book Your Stall</a>
+                <a href="exhibitors.html" class="btn btn-primary btn-lg rounded-pill-btn px-4">Book Your Stall</a>
                 <a href="sponsors.html" class="btn btn-outline-light btn-lg rounded-pill-btn px-4">Sponsor Now</a>
                 <a href="contact.html" class="btn btn-outline-light btn-lg rounded-pill-btn px-4">Send Enquiry</a>
             </div>

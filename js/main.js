@@ -77,13 +77,27 @@ document.addEventListener("DOMContentLoaded", function () {
   /* Stats strip */
   const statsContainer = document.getElementById("stats-container");
   if (statsContainer && typeof STATS !== "undefined") {
-    statsContainer.innerHTML = STATS.map((s, i) => `
-      <div class="col-6 col-md-3 stat-item" data-aos="fade-up" data-aos-delay="${i * 100}">
-        <div class="stat-num"><span class="counter-num" data-target="${parseFloat(s.num)}">${s.num.replace(/[^0-9.]/g, "") || 0}</span><span class="stat-suffix">${s.suffix}</span></div>
-        <div class="stat-label">${s.label}</div>
-        ${i < STATS.length - 1 ? '<div class="stat-divider d-none d-md-block" style="height:60px;width:1px;background:rgba(255,255,255,.2);position:absolute;right:0;top:50%;transform:translateY(-50%)"></div>' : ""}
+    statsContainer.innerHTML = `
+      <div class="stats-glass-card" data-aos="fade-up">
+        <div class="row g-0 align-items-center">
+          ${STATS.map((s, i) => `
+            <div class="col-md-3 col-sm-6 stat-glass-item ${i === STATS.length - 1 ? 'border-0' : ''}">
+              <div class="d-flex align-items-center gap-3 py-2 px-3 justify-content-center justify-content-md-start">
+                <div class="stat-glass-icon">
+                  <i class="fas ${s.icon || 'fa-chart-line'}"></i>
+                </div>
+                <div class="stat-glass-info">
+                  <div class="stat-glass-val">
+                    <span class="counter-num" data-target="${parseFloat(s.num)}">0</span>${s.suffix || ''}
+                  </div>
+                  <div class="stat-glass-lbl">${s.label}</div>
+                </div>
+              </div>
+            </div>
+          `).join("")}
+        </div>
       </div>
-    `).join("");
+    `;
 
     /* re-observe newly created counter elements */
     document.querySelectorAll(".counter-num").forEach(el => {
@@ -115,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const profilesContainer = document.getElementById("exhibitor-profiles-container");
   if (profilesContainer && typeof EXHIBITOR_PROFILES !== "undefined") {
     const themeColors = [
-      "#3b82f6"
+      "#3b82f6", "#31C4F3", "#1FBCB0", "#6CC064", "#f4cf22", "#f36d21", "#d52027", "#74489c", "#2b66b1"
     ];
 
     profilesContainer.innerHTML = EXHIBITOR_PROFILES.map((cat, i) => {
